@@ -1,4 +1,4 @@
-# Paytm Insurance — Agentic Prior Authorization (Demo)
+#  Insurance — Agentic Prior Authorization 
 
 A working demo of the multi-agent prior-authorization workflow from the pitch deck.
 Sarah's knee-MRI journey is pre-filled in the form as a walkthrough.
