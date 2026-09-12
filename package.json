@@ -1,0 +1,17 @@
+{
+  "name": "priorauth-app",
+  "version": "1.0.0",
+  "description": "Agentic AI prior-authorization demo for Paytm Insurance (hackathon build)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.3.0"
+  }
+}

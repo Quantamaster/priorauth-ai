@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paytm Insurance — Prior Authorization</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-badge">AI</span>
+      <span>Paytm Insurance &middot; Prior Authorization</span>
+    </div>
+    <span class="badge-live">Agentic workflow demo</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h1>Request Prior Authorization</h1>
+      <p class="muted">Fill this in like a policyholder would — the same request Sarah made for her knee MRI is pre-filled as an example.</p>
+
+      <form id="authForm">
+        <label>Patient name
+          <input type="text" name="patientName" value="Sarah Iyer" required />
+        </label>
+
+        <label>What's wrong? (diagnosis, in your own words)
+          <textarea name="diagnosisText" rows="2" required>Persistent knee pain after a fall, doctor suspects ligament damage.</textarea>
+        </label>
+
+        <label>What has your doctor recommended? (procedure)
+          <textarea name="procedureText" rows="2" required>Doctor referred me for an MRI of the knee to check the ligament.</textarea>
+        </label>
+
+        <label>Upload referral / symptom notes
+          <input type="file" name="documents" multiple />
+        </label>
+
+        <label class="checkbox-row">
+          <input type="checkbox" name="hasConservativeTherapyDocs" />
+          I already have 6 weeks of physical therapy records
+        </label>
+
+        <button type="submit" id="submitBtn">Submit Request</button>
+      </form>
+    </section>
+
+    <section class="panel status-panel">
+      <h2>Live Status</h2>
+      <ol class="timeline" id="timeline">
+        <li class="tl-item" data-key="request_initiated"><span class="dot"></span><div><strong>Request Initiated</strong><p>Waiting for submission…</p></div></li>
+        <li class="tl-item" data-key="documents_extracted"><span class="dot"></span><div><strong>Documents Extracted</strong><p>&nbsp;</p></div></li>
+        <li class="tl-item" data-key="medical_validation"><span class="dot"></span><div><strong>Medical Validation</strong><p>&nbsp;</p></div></li>
+        <li class="tl-item" data-key="policy_check"><span class="dot"></span><div><strong>Policy Check</strong><p>&nbsp;</p></div></li>
+        <li class="tl-item" data-key="decision"><span class="dot"></span><div><strong>Decision + Visibility</strong><p>&nbsp;</p></div></li>
+      </ol>
+
+      <div id="resultCard" class="result-card hidden">
+        <div class="prob-ring">
+          <span id="probValue">--%</span>
+        </div>
+        <div class="result-detail">
+          <div id="statusPill" class="status-pill">—</div>
+          <div id="missingBox" class="missing-box hidden">
+            <strong>To improve your odds, add:</strong>
+            <ul id="missingList"></ul>
+            <div class="add-doc-row">
+              <input type="file" id="extraDocs" multiple />
+              <button id="addDocsBtn">Add documents &amp; recheck</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
