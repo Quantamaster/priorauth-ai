@@ -1,5 +1,5 @@
 {
-  "name": "priorauth-app",
+  "name": "priorauth-ai",
   "version": "1.0.0",
   "description": "Agentic AI prior-authorization demo for Paytm Insurance (hackathon build)",
   "main": "server.js",
